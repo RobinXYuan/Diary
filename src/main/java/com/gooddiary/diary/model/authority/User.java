@@ -1,6 +1,6 @@
 package com.gooddiary.diary.model.authority;
 
-import com.gooddiary.diary.model.session.Diary;
+import com.gooddiary.diary.model.business.Diary;
 import lombok.Builder;
 import lombok.Data;
 

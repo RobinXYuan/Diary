@@ -1,4 +1,4 @@
-package com.gooddiary.diary.model.session;
+package com.gooddiary.diary.model.business;
 
 
 public enum DiaryStatus {

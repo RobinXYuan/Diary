@@ -1,6 +1,6 @@
-package com.gooddiary.diary.repository.session;
+package com.gooddiary.diary.repository.business;
 
-import com.gooddiary.diary.model.session.Diary;
+import com.gooddiary.diary.model.business.Diary;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

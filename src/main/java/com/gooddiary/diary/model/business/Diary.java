@@ -1,35 +1,27 @@
-package com.gooddiary.diary.model.session;
+package com.gooddiary.diary.model.business;
 
 import com.gooddiary.diary.model.authority.User;
+import lombok.Builder;
 import lombok.Data;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.io.Serializable;
 
 
 @Entity
 @Data
-public class Diary {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "diary_id")
-    private Long id;
+@Builder
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+public class Diary extends BaseEntity implements Serializable {
 
     @Column(length = 100)
     private String title;
 
     @Column(columnDefinition = "LONGTEXT")
     private String contentHtml;
-
-    @Column(updatable = false)
-    @CreationTimestamp
-    private Date createDate;
-
-    @UpdateTimestamp
-    private Date updateDate;
 
     private boolean isPublic;
 
@@ -39,6 +31,9 @@ public class Diary {
 
     @ManyToOne
     private User author;
+
+    @ManyToOne
+    private Journal journal;
 
     public boolean isPublic() {
         return false;
